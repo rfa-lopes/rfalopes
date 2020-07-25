@@ -1,15 +1,12 @@
 ---
-layout: page
-title: Page not found
-image:
-permalink: /404.html
+layout: index-material-sidebar-left
+title: Ooops!
 ---
-<div class="container">
-  <div class="row">
-    <div class="col col-12" style="text-align: center">
-      <h2>404</h2>
-      <p>The requested page could not be found.</p>
-      <p><a href="{{site.baseurl}}/">Back to the bLog</a></p>
-    </div>
-  </div>
+<div class="error">
+    <p>Something seems to have gone wrong here. Sorry 'bout that</p>
+    <p>Maybe we can make up for it with some posts and then be friends again?</p>
 </div>
+
+{% for post in site.posts limit:4 %}
+    {% include article_index.html %}
+{% endfor %}
