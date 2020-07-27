@@ -1,5 +1,19 @@
-# Rodrigo Faria Lopes
+# Rodrigo Faria Lopes - *[Resume link](https://rfa-lopes.github.io/rfalopes/)*
 
-From: https://jekyll-theme-minimal-resume.netlify.com/
+Credits: https://jekyll-theme-minimal-resume.netlify.com/
 
-*[Link to resume](https://rfa-lopes.github.io/rfalopes/)*
+## Run local server
+
+```cmd
+bundle exec jekyll serve
+```
+
+## TODO List
+
+* Routing & Navigation
+
+* Complete CV
+
+* Extracurricular activities page
+
+* Hacking page
