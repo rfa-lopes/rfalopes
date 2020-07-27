@@ -10,7 +10,7 @@ user_description: Computer Engineering student at the FCT@UNL, currently in my f
 user_title: Software Engineer
 email: rfa.lopess@gmail.com
 # twitter_username: lorem_ipsum
-github_username:  rfa-lopes
+github_username: rfa-lopes
 # gplus_username:  lorem_ipsum
 
 exclude: ["package.json", "src", "node_modules"]
