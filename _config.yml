@@ -17,3 +17,4 @@ exclude: ["package.json", "src", "node_modules"]
 
 
 google_ad_client: 5353808927577681
+google_tracking_id: G-8CDPS3ZJPS
