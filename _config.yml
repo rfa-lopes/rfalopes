@@ -14,3 +14,6 @@ github_username: rfa-lopes
 # gplus_username:  lorem_ipsum
 
 exclude: ["package.json", "src", "node_modules"]
+
+
+google_ad_client: 5353808927577681
