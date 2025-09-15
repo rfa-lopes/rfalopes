@@ -11,10 +11,10 @@ user_description: test test test
 
 email: rfa.lopess@gmail.com
 
-user.instagram: rfa.lopes
-user.facebook: rfalopess
-user.linkedin: rfa-lopes
-user.github: rfa-lopes
+user_instagram: rfa.lopes
+user_facebook: rfalopess
+user_linkedin: rfa-lopes
+user_github: rfa-lopes
 
 
 exclude: ["package.json", "src", "node_modules"]
