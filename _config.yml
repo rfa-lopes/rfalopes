@@ -7,11 +7,12 @@ url: "https://rfa-lopes.github.io" # the base hostname & protocol for your site 
 # User settings
 username: Rodrigo Lopes
 user_description: Resume
-user_title: Computer Science Student at NOVA School of Science and Technology | FCT NOVA #Software Engineer
+user_title: Software Engineer | Founder HOCKEYFY
 email: rfa.lopess@gmail.com
-# twitter_username: lorem_ipsum
 github_username: rfa-lopes
-# gplus_username:  lorem_ipsum
+instagram_username: "rfa.lopes"
+facebook_username: "rfa.lopes"
+
 
 exclude: ["package.json", "src", "node_modules"]
 
