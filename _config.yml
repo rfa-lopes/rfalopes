@@ -7,11 +7,14 @@ url: "https://rfa-lopes.github.io" # the base hostname & protocol for your site 
 # User settings
 username: Rodrigo Lopes
 user_description: Resume
+
 user_title: Software Engineer | Founder HOCKEYFY
 email: rfa.lopess@gmail.com
-github_username: rfa-lopes
-instagram_username: "rfa.lopes"
-facebook_username: "rfa.lopes"
+
+user.instagram: rfa.lopes
+user.facebook: rfalopess
+user.linkedin: rfa-lopes
+user.github: rfa-lopes
 
 
 exclude: ["package.json", "src", "node_modules"]
