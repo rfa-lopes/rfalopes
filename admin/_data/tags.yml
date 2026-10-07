@@ -1,0 +1,31 @@
+# ─────────────────────────────────────────────────────────────
+#  TAGS — the coloured labels used on experience, education and hobby items.
+#  In an item's front matter write:   tags: [hobby, federated]
+#  To create a new tag: add it here (key, en, pt, color) and use the key.
+#
+#  colors: blue | green | amber | rose | violet | teal | slate
+# ─────────────────────────────────────────────────────────────
+
+# ── Experience
+job:            { en: Job,              pt: Emprego,            color: blue }
+internship:     { en: Internship,       pt: Estágio,            color: teal }
+business:       { en: Own business,     pt: Negócio próprio,    color: amber }
+personal:       { en: Personal project, pt: Projeto pessoal,    color: violet }
+freelance:      { en: Freelance,        pt: Freelance,          color: rose }
+seasonal:       { en: Seasonal job,     pt: Trabalho sazonal,   color: rose }
+
+# ── Education
+degree:         { en: Degree,           pt: Curso superior, color: blue }
+thesis:         { en: Thesis,           pt: Tese,               color: amber }
+project:        { en: University project, pt: Projeto académico, color: violet }
+course:         { en: Course,           pt: Curso,              color: green }
+certification:  { en: Certification,    pt: Certificação,       color: teal }
+secondary:      { en: Secondary school, pt: Ensino secundário,  color: slate }
+
+# ── Hobbies
+hobby:          { en: Hobby,            pt: Hobby,              color: teal }
+federated:      { en: Federated,        pt: Federado,           color: blue }
+experience:     { en: Experience,       pt: Experiência,        color: green }
+semi-pro:       { en: Semi-professional, pt: Semi-profissional, color: amber }
+competitive:    { en: Competitive,      pt: Competição,         color: rose }
+past:           { en: Past,             pt: Passado,            color: slate }

@@ -1,0 +1,91 @@
+# ─────────────────────────────────────────────────────────────
+#  HARD SKILLS — shown on the Hard Skills tab and (core ones) on the home page
+#
+#  core: true   → highlighted as "main stack"  (the underlined ones in your CV)
+#  icon: slug from https://devicon.dev (optional; shows the technology logo)
+#  variant: original | plain   (optional, default original)
+#  img: /images/icons/xxx.svg   → your own logo file instead of a Devicon one (put it in images/icons/)
+# ─────────────────────────────────────────────────────────────
+
+- group: { en: AI, pt: IA }
+  items:
+    - { name: Claude Code, img: /images/icons/claude-code.svg }
+    - { name: OpenCode, img: /images/icons/opencode.svg }
+    - { name: Gemini File Search, img: /images/icons/gemini.svg }
+
+- group: { en: Programming languages, pt: Linguagens de programação }
+  items:
+    - { name: Java, icon: java, core: true }
+    - { name: Kotlin, icon: kotlin }
+    - { name: Python, icon: python }
+    - { name: C#, icon: csharp }
+    - { name: C, icon: c }
+    - { name: TypeScript, icon: typescript }
+    - { name: Dart, icon: dart }
+    - { name: JavaScript, icon: javascript }
+    - { name: HTML, icon: html5 }
+    - { name: CSS, icon: css3 }
+
+- group: { en: Front-end, pt: Front-end }
+  items:
+    - { name: React, icon: react, core: true }
+    - { name: Flutter, icon: flutter }
+    - { name: Ionic, icon: ionic }
+    - { name: Capacitor, icon: capacitor, variant: plain }
+    - { name: Zustand }
+    - { name: MUI, icon: materialui }
+
+- group: { en: Back-end, pt: Back-end }
+  items:
+    - { name: Spring Boot, icon: spring, core: true }
+    - { name: Firebase, icon: firebase }
+    - { name: Hibernate, icon: hibernate }
+    - { name: Mockito }
+    - { name: JPA }
+    - { name: JUnit, icon: junit }
+    - { name: Maven, icon: maven }
+    - { name: Gradle, icon: gradle }
+
+- group: { en: Databases, pt: Bases de dados }
+  items:
+    - { name: MariaDB, icon: mariadb, core: true }
+    - { name: MongoDB, icon: mongodb, core: true }
+    - { name: Redis, icon: redis, core: true }
+    - { name: MySQL, icon: mysql }
+    - { name: PostgreSQL, icon: postgresql }
+    - { name: Oracle, icon: oracle }
+    - { name: SQLite, icon: sqlite }
+    - { name: H2 }
+
+- group: { en: DevOps, pt: DevOps }
+  items:
+    - { name: Git, icon: git, core: true }
+    - { name: GitHub, icon: github }
+    - { name: Docker (Compose), icon: docker, core: true }
+    - { name: Jenkins, icon: jenkins, core: true }
+    - { name: GitHub Actions, icon: githubactions }
+
+- group: { en: AWS, pt: AWS }
+  items:
+    - { name: Secrets Manager, icon: amazonwebservices, variant: original-wordmark }
+    - { name: SQS, icon: amazonwebservices, variant: original-wordmark }
+    - { name: S3, icon: amazonwebservices, variant: original-wordmark }
+
+- group: { en: Tools, pt: Ferramentas }
+  items:
+    - { name: VSCode, icon: vscode, core: true }
+    - { name: IntelliJ, icon: intellij }
+    - { name: Eclipse, icon: eclipse }
+    - { name: Stripe }
+    - { name: Unity, icon: unity }
+    - { name: Swagger API, icon: swagger }
+    - { name: Postman, icon: postman, core: true }
+    - { name: Sentry, icon: sentry }
+    - { name: Vault, icon: vault }
+    - { name: RabbitMQ, icon: rabbitmq }
+
+- group: { en: Operating systems, pt: Sistemas operativos }
+  items:
+    - { name: Linux, icon: linux, core: true }
+    - { name: Windows, icon: windows8 }
+    - { name: macOS, icon: apple, core: true }

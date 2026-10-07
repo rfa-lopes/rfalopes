@@ -1,0 +1,66 @@
+# ─────────────────────────────────────────────────────────────
+#  CONTACTS — shown on the Contacts tab, in the footer and in the hero.
+#  Set `show: false` to hide one without deleting it.
+#  `hero: true` also puts the icon in the home page header.
+#
+#  icon: mail | linkedin | github | instagram | facebook | map-pin | globe | phone
+#
+#  NOTE: this repository is public. Do NOT write your phone number here
+#  unless you really want it public (spam bots scrape GitHub pages).
+# ─────────────────────────────────────────────────────────────
+
+- key: email
+  icon: mail
+  label: { en: E-mail, pt: E-mail }
+  value: rfa.lopess@gmail.com
+  url: mailto:rfa.lopess@gmail.com
+  hero: true
+  show: true
+
+- key: linkedin
+  icon: linkedin
+  label: { en: LinkedIn, pt: LinkedIn }
+  value: linkedin.com/in/rfa-lopes
+  url: https://www.linkedin.com/in/rfa-lopes/
+  hero: true
+  show: true
+
+- key: github
+  icon: github
+  label: { en: GitHub, pt: GitHub }
+  value: github.com/rfa-lopes
+  url: https://github.com/rfa-lopes
+  hero: true
+  show: true
+
+- key: instagram
+  icon: instagram
+  label: { en: Instagram, pt: Instagram }
+  value: "@rfa.lopes"
+  url: https://www.instagram.com/rfa.lopes
+  hero: true
+  show: true
+
+- key: facebook
+  icon: facebook
+  label: { en: Facebook, pt: Facebook }
+  value: facebook.com/rfalopess
+  url: https://www.facebook.com/rfalopess
+  hero: false
+  show: true
+
+- key: location
+  icon: map-pin
+  label: { en: Location, pt: Localização }
+  value: Sesimbra, Portugal
+  url: ""
+  hero: false
+  show: true
+
+# - key: phone
+#   icon: phone
+#   label: { en: Phone, pt: Telemóvel }
+#   value: "+351 000 000 000"
+#   url: "tel:+351000000000"
+#   hero: false
+#   show: true

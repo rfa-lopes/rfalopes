@@ -1,24 +1,33 @@
-<div id="particles-js">
-  <div class="header">
-    <h1>
-      <img src="images/Eu.png" width="300" height="300" style="border-radius: 8px; ">
-      <span class="site-title">{{ site.username }}</span>
-      <span class="site-description">{{ site.user_title }}</span>
-    </h1>
-    <div class="header-icons">
-      <a aria-label="Send email" href="mailto:rfa.lopess@gmail.com"><i class="icon fa fa-envelope"></i></a>
-      <a aria-label="My Instagram" target="_blank" href="https://www.instagram.com/{{site.user_instagram}}"><i
-          class="icon fa fa-instagram" aria-hidden="true"></i></a>
-      <a aria-label="My Facebook" target="_blank" href="https://www.facebook.com/{{site.user_facebook}}"><i
-          class="icon fa fa-facebook" aria-hidden="true"></i></a>
-      <a aria-label="My LinkedIn" target="_blank" href="https://www.linkedin.com/in/{{site.user_linkedin}}/"><i
-          class="icon fa fa-linkedin-square" aria-hidden="true"></i></a>
-      <a aria-label="My Github" target="_blank" href="https://github.com/{{site.user_github}}"><i
-          class="icon fa fa-github-alt" aria-hidden="true"></i></a>
-    </div>
-    <div class="header-links">
-      <!-- <a class="link" href="#about" data-scroll>About Me</a> -->
+{%- assign _section = page.nav | default: page.collection | default: 'home' -%}
+<header class="site-header">
+  <div class="container nav-bar">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.data.profile.name }}">
+      {%- assign _photo = site.data.profile.photo -%}
+      <span class="brand-mark{% if _photo %} has-photo{% endif %}">{% if _photo %}<img src="{{ _photo | relative_url }}" alt="" width="40" height="40" decoding="async">{% else %}{{ site.data.profile.monogram | default: 'RL' }}{% endif %}</span>
+      <span class="brand-name">{{ site.data.profile.name }}</span>
+    </a>
+
+    <nav id="site-nav" class="nav-links" aria-label="Main">
+      {%- for item in site.data.nav -%}
+      {%- unless item.show == false %}
+      <a href="{{ item.url | relative_url }}"{% if _section == item.key %} aria-current="page"{% endif %}>{% include i18n.html en=item.label.en pt=item.label.pt %}</a>
+      {%- endunless -%}
+      {%- endfor %}
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn lang-btn" id="lang-toggle" type="button">
+        <span data-l="en" aria-hidden="true">PT</span><span data-l="pt" aria-hidden="true">EN</span>
+        <span class="sr-only"><span data-l="en">Mudar para português</span><span data-l="pt">Switch to English</span></span>
+      </button>
+      <button class="icon-btn" id="theme-toggle" type="button">
+        {% include icon.html name="sun" class="i-sun" %}{% include icon.html name="moon" class="i-moon" %}
+        <span class="sr-only"><span data-l="en">Toggle light / dark theme</span><span data-l="pt">Alternar tema claro / escuro</span></span>
+      </button>
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        {% include icon.html name="menu" class="i-open" %}{% include icon.html name="x" class="i-close" %}
+        <span class="sr-only">{% include t.html k="menu" %}</span>
+      </button>
     </div>
   </div>
-  <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
-</div>
+</header>

@@ -1,0 +1,64 @@
+# ─────────────────────────────────────────────────────────────
+#  NAVIGATION — the tabs at the top, and the tiles on the home page.
+#  Reorder, rename or hide (show: false) tabs here.
+# ─────────────────────────────────────────────────────────────
+
+- key: home
+  url: /
+  icon: home
+  label: { en: Home, pt: Início }
+  show: true
+
+- key: experience
+  url: /experience/
+  icon: briefcase
+  label: { en: Experience, pt: Experiência }
+  desc:
+    en: A timeline of jobs, businesses and personal projects, from the most recent.
+    pt: Uma timeline de empregos, negócios e projetos pessoais, do mais recente ao mais antigo.
+  show: true
+
+- key: education
+  url: /education/
+  icon: book
+  label: { en: Education, pt: Educação }
+  desc:
+    en: Degree, thesis, courses and the projects built along the way.
+    pt: Curso, tese, formações e os projetos feitos pelo caminho.
+  show: true
+
+- key: skills
+  url: /skills/
+  icon: code
+  label: { en: Hard Skills, pt: Hard Skills }
+  desc:
+    en: Languages, frameworks, databases, DevOps and tools.
+    pt: Linguagens, frameworks, bases de dados, DevOps e ferramentas.
+  show: true
+
+- key: hobbies
+  url: /hobbies/
+  icon: heart
+  label: { en: Hobbies, pt: Hobbies }
+  desc:
+    en: What I do away from the keyboard.
+    pt: O que faço longe do teclado.
+  show: true
+
+- key: languages
+  url: /languages/
+  icon: globe
+  label: { en: Languages, pt: Línguas }
+  desc:
+    en: The languages I speak.
+    pt: As línguas que falo.
+  show: true
+
+- key: contacts
+  url: /contacts/
+  icon: mail
+  label: { en: Contacts, pt: Contactos }
+  desc:
+    en: Let's talk — e-mail, LinkedIn, GitHub and more.
+    pt: Vamos conversar — e-mail, LinkedIn, GitHub e mais.
+  show: true

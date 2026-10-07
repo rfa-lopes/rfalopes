@@ -1,0 +1,46 @@
+---
+layout: default
+title: Hobbies
+nav: hobbies
+permalink: /hobbies/
+description: Hobbies of Rodrigo Lopes — what I do away from the keyboard.
+---
+{%- include sorted.html collection="hobbies" -%}
+{%- assign _all_tags = sorted_items | map: 'tags' | join: ',' | split: ',' | uniq -%}
+<section class="page-head">
+  <div class="container">
+    <h1>{% include t.html k="hobbies_title" %}</h1>
+    <p class="lead">{% include t.html k="hobbies_sub" %}</p>
+    {%- if _all_tags.size > 1 %}
+    <div class="filters" role="group" aria-label="Filter">
+      <button type="button" class="filter is-active" data-filter="all">{% include t.html k="hobbies_all" %}</button>
+      {%- for k in _all_tags %}
+      {%- assign _tg = site.data.tags[k] %}
+      <button type="button" class="filter" data-filter="{{ k }}">{% if _tg %}{% include i18n.html en=_tg.en pt=_tg.pt %}{% else %}{{ k }}{% endif %}</button>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="hobby-grid">
+      {%- for item in sorted_items %}
+      <a class="hobby-card reveal" href="{{ item.url | relative_url }}" data-tags="{{ item.tags | join: ' ' }}">
+        {% include media.html item=item class="hobby-media" %}
+        <div class="hobby-body">
+          <div class="tags">{% include tags.html tags=item.tags %}</div>
+          <h3>{% include title.html item=item %}</h3>
+          {%- capture _when %}{% include period.html start=item.start end=item.end since=true custom=item.period custom_pt=item.period_pt %}{% endcapture %}
+          {%- assign _when = _when | strip %}
+          {%- if _when != '' %}
+          <p class="hobby-date">{% include icon.html name="calendar" %}<span>{{ _when }}</span></p>
+          {%- endif %}
+          <p class="hobby-text">{% include i18n.html en=item.summary pt=item.summary_pt %}</p>
+        </div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

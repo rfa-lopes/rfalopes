@@ -1,0 +1,19 @@
+# ─────────────────────────────────────────────────────────────
+#  LANGUAGES — shown on the Languages tab
+#  percent: 0-100 (fills the level bar)   cefr: A1 A2 B1 B2 C1 C2 (optional)
+# ─────────────────────────────────────────────────────────────
+
+- name: { en: Portuguese, pt: Português }
+  level: { en: Native, pt: Nativo }
+  percent: 100
+  note:
+    en: Mother tongue.
+    pt: Língua materna.
+
+- name: { en: English, pt: Inglês }
+  level: { en: Upper-intermediate, pt: Intermédio-avançado }
+  cefr: B2
+  percent: 67
+  # note:
+  #   en: Add a sentence here (certificates, where you use it, ...).
+  #   pt: Adiciona aqui uma frase (certificados, onde usas, ...).

@@ -1,0 +1,14 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<section class="page-head page-head--center">
+  <div class="container">
+    <p class="eyebrow">404</p>
+    <h1>{% include t.html k="notfound_title" %}</h1>
+    <p class="lead">{% include t.html k="notfound_text" %}</p>
+    <p><a class="btn btn--primary" href="{{ '/' | relative_url }}">{% include t.html k="notfound_cta" %}{% include icon.html name="arrow-right" %}</a></p>
+  </div>
+</section>

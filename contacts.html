@@ -1,0 +1,34 @@
+---
+layout: default
+title: Contacts
+nav: contacts
+permalink: /contacts/
+description: Contact Rodrigo Lopes — e-mail, LinkedIn, GitHub and social networks.
+---
+<section class="page-head">
+  <div class="container">
+    <h1>{% include t.html k="contacts_title" %}</h1>
+    <p class="lead">{% include t.html k="contacts_sub" %}</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container contact-grid">
+    {%- for c in site.data.contacts -%}
+    {%- if c.show != false -%}
+    {%- if c.url and c.url != '' %}
+    <a class="contact-card reveal" href="{{ c.url }}"{% unless c.url contains 'mailto:' or c.url contains 'tel:' %} target="_blank" rel="noopener"{% endunless %}>
+      <span class="contact-icon">{% include icon.html name=c.icon %}</span>
+      <span class="contact-text"><small>{% include i18n.html en=c.label.en pt=c.label.pt %}</small><strong>{{ c.value }}</strong></span>
+      <span class="contact-go">{% include icon.html name="arrow-right" %}</span>
+    </a>
+    {%- else %}
+    <div class="contact-card reveal is-static">
+      <span class="contact-icon">{% include icon.html name=c.icon %}</span>
+      <span class="contact-text"><small>{% include i18n.html en=c.label.en pt=c.label.pt %}</small><strong>{{ c.value }}</strong></span>
+    </div>
+    {%- endif -%}
+    {%- endif -%}
+    {%- endfor %}
+  </div>
+</section>

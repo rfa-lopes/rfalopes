@@ -1,0 +1,12 @@
+{%- assign _sk = include.s -%}
+<li class="skill{% if _sk.core %} is-core{% endif %}">
+  {%- if _sk.img -%}
+  <span class="skill-ico"><img src="{{ _sk.img | relative_url }}" alt="" width="18" height="18" loading="lazy" decoding="async"></span>
+  {%- elsif _sk.icon -%}
+  <span class="skill-ico"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/{{ _sk.icon }}/{{ _sk.icon }}-{{ _sk.variant | default: 'original' }}.svg" alt="" width="20" height="20" loading="lazy" decoding="async"></span>
+  {%- else -%}
+  <span class="skill-ico skill-ico--dot" aria-hidden="true"></span>
+  {%- endif -%}
+  <span class="skill-name">{{ _sk.name }}</span>
+  {%- if _sk.core %}<span class="sr-only"> (main stack)</span>{% endif -%}
+</li>

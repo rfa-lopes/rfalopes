@@ -1,6 +1,12 @@
-<footer class="footer">
-	<p>&copy; {{ site.username }} - Last update in 15/09/2025</p>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.data.profile.name }} · {% include t.html k="updated" %} {{ site.time | date: "%d/%m/%Y" }}</p>
+    <ul class="social" aria-label="Social">
+      {%- for c in site.data.contacts -%}
+      {%- if c.hero and c.show != false and c.url != '' %}
+      <li><a href="{{ c.url }}"{% unless c.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ c.label.en }}">{% include icon.html name=c.icon %}</a></li>
+      {%- endif -%}
+      {%- endfor %}
+    </ul>
+  </div>
 </footer>
-<script src=""></script>
-<script src="{{ '/assets/js/sweet-scroll.min.js' | prepend: site.baseurl }}"></script>
-<script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>

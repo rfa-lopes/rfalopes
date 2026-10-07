@@ -1,23 +1,52 @@
-# Site settings
+# ─────────────────────────────────────────────────────────────
+#  Site settings  (the content you edit lives in /admin — see admin/README.md)
+# ─────────────────────────────────────────────────────────────
 title: Rodrigo Lopes
-description: Resume
-baseurl: "/rfalopes" # the subpath of your site, e.g. /blog
-url: "https://rfa-lopes.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+description: Software Engineer and founder of Hockeyfy. Experience, education, skills and projects.
+baseurl: "/rfalopes"                   # the subpath of the site
+url: "https://rfa-lopes.github.io"     # the base hostname & protocol
+lang: en
+timezone: Europe/Lisbon
 
-# User settings
-username: Rodrigo Lopes
-user_title: Software Engineer | Founder HOCKEYFY
+# Everything editable lives inside /admin
+collections_dir: admin      # admin/_experience, admin/_education, admin/_hobbies
+data_dir: admin/_data       # admin/_data/*.yml (profile, contacts, skills, ...)
 
-email: rfa.lopess@gmail.com
+collections:
+  experience:
+    output: true
+    permalink: /experience/:name/
+  education:
+    output: true
+    permalink: /education/:name/
+  hobbies:
+    output: true
+    permalink: /hobbies/:name/
 
-user_instagram: rfa.lopes
-user_facebook: rfalopess
-user_linkedin: rfa-lopes
-user_github: rfa-lopes
+defaults:
+  - scope: { path: "", type: experience }
+    values: { layout: detail }
+  - scope: { path: "", type: education }
+    values: { layout: detail }
+  - scope: { path: "", type: hobbies }
+    values: { layout: detail }
 
+plugins:
+  - jekyll-sitemap
 
-exclude: ["package.json", "src", "node_modules"]
-
-
-google_ad_client: 5353808927577681
+# Analytics (only loaded on the published site, never on a local preview)
 google_tracking_id: G-8CDPS3ZJPS
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - admin/README.md
+  - images/README.md
+  - tools
+  - _site-test
+  - vendor
+  - .bundle
+  - .idea
+  - node_modules

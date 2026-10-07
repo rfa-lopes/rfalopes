@@ -1,0 +1,38 @@
+---
+layout: default
+title: Experience
+nav: experience
+permalink: /experience/
+description: Professional experience of Rodrigo Lopes — jobs, own projects and businesses.
+---
+{%- include sorted.html collection="experience" -%}
+{%- assign _n_own = sorted_items | where: 'track', 'own' | size -%}
+{%- assign _n_emp = sorted_items.size | minus: _n_own -%}
+<section class="page-head">
+  <div class="container">
+    <h1>{% include t.html k="experience_title" %}</h1>
+    <p class="lead">{% include t.html k="experience_sub" %}</p>
+  </div>
+</section>
+
+<div class="track-bar" data-active="employee">
+  <div class="container track-inner">
+    <div class="track-switch" role="tablist" aria-label="Timeline view" aria-controls="timeline">
+      <span class="track-thumb" aria-hidden="true"></span>
+      <button type="button" role="tab" class="track-btn" data-track="employee" aria-selected="true">
+        {% include icon.html name="briefcase" %}<span>{% include t.html k="track_employee" %}</span><em class="track-count">{{ _n_emp }}</em>
+      </button>
+      <button type="button" role="tab" class="track-btn" data-track="own" aria-selected="false">
+        {% include icon.html name="zap" %}<span>{% include t.html k="track_own" %}</span><em class="track-count">{{ _n_own }}</em>
+      </button>
+    </div>
+    <p class="track-hint" data-for="employee">{% include t.html k="track_hint_employee" %}</p>
+    <p class="track-hint" data-for="own">{% include t.html k="track_hint_own" %}</p>
+  </div>
+</div>
+
+<section class="section section--tight">
+  <div class="container">
+    {% include timeline.html collection="experience" tracks=true %}
+  </div>
+</section>

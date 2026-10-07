@@ -1,0 +1,8 @@
+{%- comment -%} "2021" → 2021   |   "2021-03" → Mar 2021 / Mar 2021 (translated month) {%- endcomment -%}
+{%- assign _dl = include.d | append: '' | split: '-' -%}
+{%- if _dl.size > 1 -%}
+{%- assign _dlm = _dl[1] | plus: 0 | minus: 1 -%}
+<span data-l="en">{{ site.data.ui.months.en[_dlm] }} {{ _dl[0] }}</span><span data-l="pt">{{ site.data.ui.months.pt[_dlm] }} {{ _dl[0] }}</span>
+{%- else -%}
+{{ _dl[0] }}
+{%- endif -%}

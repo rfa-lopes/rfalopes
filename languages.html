@@ -1,0 +1,31 @@
+---
+layout: default
+title: Languages
+nav: languages
+permalink: /languages/
+description: Languages spoken by Rodrigo Lopes.
+---
+<section class="page-head">
+  <div class="container">
+    <h1>{% include t.html k="languages_title" %}</h1>
+    <p class="lead">{% include t.html k="languages_sub" %}</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container lang-grid">
+    {%- for l in site.data.languages %}
+    <article class="panel lang-card reveal">
+      <div class="lang-top">
+        <h2>{% include i18n.html en=l.name.en pt=l.name.pt %}</h2>
+        {%- if l.cefr %}<span class="cefr">{{ l.cefr }}</span>{% endif %}
+      </div>
+      <p class="lang-level">{% include i18n.html en=l.level.en pt=l.level.pt %}</p>
+      <div class="meter" role="img" aria-label="{{ l.percent }}%"><span style="width: {{ l.percent }}%"></span></div>
+      {%- if l.note %}
+      <p class="lang-note">{% include i18n.html en=l.note.en pt=l.note.pt %}</p>
+      {%- endif %}
+    </article>
+    {%- endfor %}
+  </div>
+</section>

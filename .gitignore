@@ -3,3 +3,9 @@
 node_modules
 .vscode
 _site/
+
+vendor/
+.bundle/
+.idea/
+.jekyll-cache/
+_site-test/

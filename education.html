@@ -1,0 +1,19 @@
+---
+layout: default
+title: Education
+nav: education
+permalink: /education/
+description: Education of Rodrigo Lopes — degree, thesis, courses and university projects.
+---
+<section class="page-head">
+  <div class="container">
+    <h1>{% include t.html k="education_title" %}</h1>
+    <p class="lead">{% include t.html k="education_sub" %}</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    {% include timeline.html collection="education" %}
+  </div>
+</section>

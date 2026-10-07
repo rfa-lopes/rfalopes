@@ -1,0 +1,67 @@
+# ─────────────────────────────────────────────────────────────
+#  UI TEXT — headings, buttons and small labels used across the site.
+#  (Item descriptions live in the item files; contacts/skills in their own files.)
+#  Keep the "quotes" around every text.
+# ─────────────────────────────────────────────────────────────
+
+months:
+  en: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+  pt: [Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+
+present:  { en: "Present",         pt: "Atualidade" }
+since:    { en: "Since",           pt: "Desde" }
+skip:     { en: "Skip to content", pt: "Saltar para o conteúdo" }
+menu:     { en: "Menu",            pt: "Menu" }
+
+# Home
+hello:            { en: "Hi, I'm",              pt: "Olá, chamo-me" }
+cta_experience:   { en: "View my experience",   pt: "Ver a minha experiência" }
+cta_contact:      { en: "Get in touch",         pt: "Falar comigo" }
+home_latest:      { en: "Latest experience",    pt: "Experiência recente" }
+home_latest_sub:  { en: "Where I've been building lately.", pt: "Onde tenho andado a construir." }
+home_explore:     { en: "Explore",              pt: "Explorar" }
+home_explore_sub: { en: "Pick a section — every item opens its own page.", pt: "Escolhe uma secção — cada item abre a sua própria página." }
+home_stack:       { en: "Main stack",           pt: "Stack principal" }
+home_stack_sub:   { en: "The tools I reach for first.", pt: "As ferramentas a que recorro primeiro." }
+home_interests:   { en: "Interests",            pt: "Interesses" }
+see_all:          { en: "See all",              pt: "Ver tudo" }
+
+# Lists
+experience_title: { en: "Professional experience", pt: "Experiência profissional" }
+experience_sub:   { en: "One timeline, two views — switch between my professional roles and my own projects & businesses. Click an item for the full story and photos.", pt: "Uma só timeline, duas vistas — alterna entre a minha experiência profissional e os meus projetos e negócios próprios. Clica num item para ver a história completa e fotos." }
+track_employee:   { en: "Professional", pt: "Profissional" }
+track_own:        { en: "Own projects & businesses", pt: "Projetos e negócios próprios" }
+track_hint_employee: { en: "Roles working for an employer. Own ventures are collapsed to their title.", pt: "Funções por conta de outrem. Os projetos próprios ficam reduzidos ao título." }
+track_hint_own:   { en: "Projects and businesses of my own. Professional roles are collapsed to their title.", pt: "Projetos e negócios próprios. As funções profissionais ficam reduzidas ao título." }
+education_title:  { en: "Education", pt: "Educação" }
+education_sub:    { en: "Degree, thesis, courses and projects — most recent first. Click an item for details.", pt: "Curso, tese, formações e projetos — do mais recente ao mais antigo. Clica num item para ver os detalhes." }
+skills_title:     { en: "Hard skills", pt: "Hard skills" }
+skills_sub:       { en: "What I work with day to day.", pt: "Com o que trabalho no dia a dia." }
+skills_legend:    { en: "Main stack", pt: "Stack principal" }
+hobbies_title:    { en: "Hobbies", pt: "Hobbies" }
+hobbies_sub:      { en: "What I do away from the keyboard. Click a card to read more.", pt: "O que faço longe do teclado. Clica num cartão para ler mais." }
+hobbies_all:      { en: "All", pt: "Todos" }
+languages_title:  { en: "Languages", pt: "Línguas" }
+languages_sub:    { en: "The languages I work and live in.", pt: "As línguas em que trabalho e vivo." }
+contacts_title:   { en: "Contacts", pt: "Contactos" }
+contacts_sub:     { en: "The best way to reach me is by e-mail or LinkedIn.", pt: "A melhor forma de falar comigo é por e-mail ou LinkedIn." }
+
+# Detail pages
+back_experience:  { en: "All experience", pt: "Toda a experiência" }
+back_education:   { en: "All education",  pt: "Toda a educação" }
+back_hobbies:     { en: "All hobbies",    pt: "Todos os hobbies" }
+view_details:     { en: "View details",   pt: "Ver detalhes" }
+highlights:       { en: "Highlights",     pt: "Destaques" }
+tech_stack:       { en: "Tech stack",     pt: "Tecnologias" }
+links:            { en: "Links",          pt: "Ligações" }
+gallery:          { en: "Gallery",        pt: "Galeria" }
+videos:           { en: "Videos",         pt: "Vídeos" }
+related_projects: { en: "Projects & thesis from this degree", pt: "Projetos e tese deste curso" }
+previous:         { en: "Previous",       pt: "Anterior" }
+next:             { en: "Next",           pt: "Seguinte" }
+
+# Footer / 404
+updated:          { en: "Last updated",   pt: "Última atualização" }
+notfound_title:   { en: "Page not found", pt: "Página não encontrada" }
+notfound_text:    { en: "The page you're looking for doesn't exist or was moved.", pt: "A página que procuras não existe ou foi movida." }
+notfound_cta:     { en: "Back to home",   pt: "Voltar ao início" }

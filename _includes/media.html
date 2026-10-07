@@ -1,0 +1,13 @@
+{%- comment -%}
+  Cover image of an item, or a gradient with its initials when there is no cover.
+  {% include media.html item=item class="tl-media" %}
+{%- endcomment -%}
+{%- assign _mi = include.item -%}
+{%- assign _mh = _mi.title | size | modulo: 6 -%}
+<div class="{{ include.class }} hue-{{ _mh }}{% if _mi.cover_fit == 'contain' or _mi.cover_bg %} is-contain{% endif %}{% if _mi.cover_bg %} is-bleed{% endif %}{% unless _mi.cover %} is-empty{% endunless %}"{% if _mi.cover_bg and _mi.cover %} style="background: {{ _mi.cover_bg }} !important"{% endif %}>
+{%- if _mi.cover -%}
+<img src="{{ _mi.cover | relative_url }}" alt="" loading="lazy" decoding="async">
+{%- else -%}
+<span class="media-initials" aria-hidden="true">{% if _mi.initials %}{{ _mi.initials }}{% else %}{{ _mi.title | slice: 0, 2 }}{% endif %}</span>
+{%- endif -%}
+</div>

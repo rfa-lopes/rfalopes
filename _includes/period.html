@@ -1,0 +1,19 @@
+{%- comment -%}
+  Date range.  {% include period.html start=item.start end=item.end %}
+  empty end → "– Present"  (or "Since 2019" when since=true)
+  start == end → single date
+  custom / custom_pt (free text, e.g. "From age 3 to 2025") replaces the computed range
+{%- endcomment -%}
+{%- assign _pc = include.custom | append: '' -%}
+{%- assign _ps = include.start | append: '' -%}
+{%- assign _pe = include.end | append: '' -%}
+{%- if _pc != '' -%}
+  {%- include i18n.html en=include.custom pt=include.custom_pt -%}
+{%- elsif _ps != '' -%}
+  {%- if _pe == '' -%}
+    {%- if include.since -%}{% include t.html k="since" %} {% include date_label.html d=_ps %}
+    {%- else -%}{% include date_label.html d=_ps %} – {% include t.html k="present" %}{%- endif -%}
+  {%- elsif _pe == _ps -%}{% include date_label.html d=_ps %}
+  {%- else -%}{% include date_label.html d=_ps %} – {% include date_label.html d=_pe %}
+  {%- endif -%}
+{%- endif -%}

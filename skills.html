@@ -1,0 +1,27 @@
+---
+layout: default
+title: Hard Skills
+nav: skills
+permalink: /skills/
+description: Hard skills of Rodrigo Lopes — languages, frameworks, databases, DevOps and tools.
+---
+<section class="page-head">
+  <div class="container">
+    <h1>{% include t.html k="skills_title" %}</h1>
+    <p class="lead">{% include t.html k="skills_sub" %}</p>
+    <p class="legend"><span class="legend-dot"></span>{% include t.html k="skills_legend" %}</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container skill-groups">
+    {%- for g in site.data.skills %}
+    <div class="panel reveal">
+      <h2 class="panel-title">{% include i18n.html en=g.group.en pt=g.group.pt %}</h2>
+      <ul class="skills">
+        {%- for s in g.items %}{% include skill.html s=s %}{% endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+  </div>
+</section>

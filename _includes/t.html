@@ -1,0 +1,9 @@
+{%- comment -%}
+  UI string from admin/_data/ui.yml.   {% include t.html k="see_all" %}
+{%- endcomment -%}
+{%- assign _ui = site.data.ui[include.k] -%}
+{%- if _ui.pt and _ui.pt != _ui.en -%}
+<span data-l="en">{{ _ui.en }}</span><span data-l="pt">{{ _ui.pt }}</span>
+{%- else -%}
+{{ _ui.en }}
+{%- endif -%}

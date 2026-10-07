@@ -1,0 +1,63 @@
+# ─────────────────────────────────────────────────────────────
+#  PROFILE — name, headline, summary and the home-page highlights
+#  Every text has an `en` (English) and a `pt` (Portuguese) version.
+#  If you leave `pt` out, the English text is shown in both languages.
+# ─────────────────────────────────────────────────────────────
+
+name: Rodrigo Lopes
+monogram: RL          # letters shown top-left only when there is no photo (the photo below is used otherwise)
+
+# Path of your photo (inside /images). Use a square image for best results.
+photo: /images/profile/rodrigo.jpg
+
+title:
+  en: Software Engineer
+  pt: Software Engineer
+
+tagline:
+  en: Founder @ Hockeyfy
+  pt: Founder @ Hockeyfy
+
+summary:
+  en: >-
+    Software engineer, currently a backend developer at Corkified, a Portuguese
+    wine-tech startup, working on its mobile app, back-office and AI features.
+    Founder of Hockeyfy, a 3D customization platform for roller hockey gear,
+    where I led full-stack development from design to payments. Before that, a
+    Full Stack Software Engineer at Siemens in Smart Infrastructure, working on
+    dashboards for monitoring buildings and on system integrations.
+  pt: >-
+    Software Engineer, atualmente backend developer na Corkified, uma startup
+    portuguesa de wine-tech, a trabalhar na app móvel, no backoffice e em
+    funcionalidades de IA. Fundei a Hockeyfy, uma plataforma de personalização
+    3D de equipamento de hóquei em patins, onde liderei o desenvolvimento
+    full-stack, do design aos pagamentos. Antes disso, fui Full Stack Software
+    Engineer na Siemens (Smart Infrastructure), a trabalhar em dashboards de
+    monitorização de edifícios e em integrações de sistemas.
+
+# Short list shown under the hero (add, remove or reorder freely)
+highlights:
+  - value: "90%"
+    label:
+      en: less manual workload after automating orders → manufacturing at Hockeyfy
+      pt: menos trabalho manual após automatizar encomendas → produção na Hockeyfy
+  - value: "17/20"
+    label:
+      en: Master's thesis grade (SNIFFER)
+      pt: nota da tese de mestrado (SNIFFER)
+  - value: "6"
+    label:
+      en: companies & organisations — Corkified, Hockeyfy, Hamus, Siemens, Card4B, Sesimbra City Council
+      pt: empresas e organizações — Corkified, Hockeyfy, Hamus, Siemens, Card4B, Câmara de Sesimbra
+
+# Personal interests (home page)
+interests:
+  - { en: Back-end / DevOps, pt: Back-end / DevOps }
+  - { en: Software Architecture, pt: Arquitetura de Software }
+  - { en: Software Development, pt: Desenvolvimento de Software }
+  - { en: Problem-solving, pt: Resolução de problemas }
+  - { en: Databases, pt: Bases de Dados }
+
+# Optional: link to a downloadable CV (leave empty to hide the button).
+# Careful: if the PDF has your phone number, anyone can download it from the public site.
+cv_url: ""

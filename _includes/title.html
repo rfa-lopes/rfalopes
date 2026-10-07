@@ -1,0 +1,7 @@
+{%- comment -%} Bilingual item title (uses `title` and optional `title_pt`).  {% include title.html item=item %} {%- endcomment -%}
+{%- assign _ti = include.item -%}
+{%- if _ti.title_pt and _ti.title_pt != '' and _ti.title_pt != _ti.title -%}
+<span data-l="en">{{ _ti.title }}</span><span data-l="pt">{{ _ti.title_pt }}</span>
+{%- else -%}
+{{ _ti.title }}
+{%- endif -%}

@@ -1,0 +1,10 @@
+{%- comment -%}
+  Bilingual text.   {% include i18n.html en="Hello" pt="Olá" %}
+  Prints both versions (CSS shows the one matching the chosen language).
+  If `pt` is missing or identical, the English text is printed once.
+{%- endcomment -%}
+{%- if include.pt and include.pt != '' and include.pt != include.en -%}
+<span data-l="en">{{ include.en }}</span><span data-l="pt">{{ include.pt }}</span>
+{%- else -%}
+{{ include.en }}
+{%- endif -%}

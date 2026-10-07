@@ -1,0 +1,5 @@
+{%- comment -%} Coloured tag pills.  {% include tags.html tags=item.tags %}   (keys defined in admin/_data/tags.yml) {%- endcomment -%}
+{%- for _tk in include.tags -%}
+{%- assign _tg = site.data.tags[_tk] -%}
+<span class="tag tag--{{ _tg.color | default: 'slate' }}">{% if _tg %}{% include i18n.html en=_tg.en pt=_tg.pt %}{% else %}{{ _tk }}{% endif %}</span>
+{%- endfor -%}

@@ -1,3 +1,118 @@
 ---
 layout: default
+nav: home
 ---
+{%- assign prof = site.data.profile -%}
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{% include i18n.html en=prof.title.en pt=prof.title.pt %} <span class="dot-sep">•</span> {% include i18n.html en=prof.tagline.en pt=prof.tagline.pt %}</p>
+      <h1 class="hero-title"><span class="hello">{% include t.html k="hello" %}</span> <span class="grad">{{ prof.name }}</span></h1>
+      <p class="hero-summary">{% include i18n.html en=prof.summary.en pt=prof.summary.pt %}</p>
+
+      <div class="hero-cta">
+        <a class="btn btn--primary" href="{{ '/experience/' | relative_url }}">{% include t.html k="cta_experience" %}{% include icon.html name="arrow-right" %}</a>
+        <a class="btn btn--ghost" href="{{ '/contacts/' | relative_url }}">{% include t.html k="cta_contact" %}</a>
+        {%- if prof.cv_url and prof.cv_url != '' %}
+        <a class="btn btn--ghost" href="{{ prof.cv_url | relative_url }}" download>CV</a>
+        {%- endif %}
+      </div>
+
+      <ul class="social" aria-label="Social">
+        {%- for c in site.data.contacts -%}
+        {%- if c.hero and c.show != false and c.url != '' %}
+        <li><a href="{{ c.url }}"{% unless c.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ c.label.en }}">{% include icon.html name=c.icon %}</a></li>
+        {%- endif -%}
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <div class="hero-photo">
+      <div class="photo-ring"><img src="{{ prof.photo | relative_url }}" alt="{{ prof.name }}" width="420" height="420" fetchpriority="high"></div>
+    </div>
+  </div>
+
+  {%- if prof.highlights %}
+  <div class="container">
+    <ul class="stats">
+      {%- for h in prof.highlights %}
+      <li><strong>{{ h.value }}</strong><span>{% include i18n.html en=h.label.en pt=h.label.pt %}</span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endif %}
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>{% include t.html k="home_latest" %}</h2>
+        <p>{% include t.html k="home_latest_sub" %}</p>
+      </div>
+      <a class="text-link" href="{{ '/experience/' | relative_url }}">{% include t.html k="see_all" %}{% include icon.html name="arrow-right" %}</a>
+    </div>
+    {%- include sorted.html collection="experience" %}
+    <div class="card-grid">
+      {%- for item in sorted_items limit: 3 %}
+      <a class="card" href="{{ item.url | relative_url }}">
+        {% include media.html item=item class="card-media" %}
+        <div class="card-body">
+          <div class="tags">{% include tags.html tags=item.tags %}</div>
+          <h3>{% include title.html item=item %}</h3>
+          <p class="card-sub">{% include i18n.html en=item.subtitle pt=item.subtitle_pt %} · {% include period.html start=item.start end=item.end %}</p>
+          <p class="card-text">{% include i18n.html en=item.summary pt=item.summary_pt %}</p>
+        </div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>{% include t.html k="home_explore" %}</h2>
+        <p>{% include t.html k="home_explore_sub" %}</p>
+      </div>
+    </div>
+    <div class="tile-grid">
+      {%- for item in site.data.nav -%}
+      {%- if item.key != 'home' and item.show != false %}
+      <a class="tile" href="{{ item.url | relative_url }}">
+        <span class="tile-icon">{% include icon.html name=item.icon %}</span>
+        <h3>{% include i18n.html en=item.label.en pt=item.label.pt %}</h3>
+        <p>{% include i18n.html en=item.desc.en pt=item.desc.pt %}</p>
+        <span class="tile-arrow">{% include icon.html name="arrow-right" %}</span>
+      </a>
+      {%- endif -%}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <h2>{% include t.html k="home_stack" %}</h2>
+      <p class="muted">{% include t.html k="home_stack_sub" %}</p>
+      <ul class="skills">
+        {%- for g in site.data.skills -%}
+        {%- for s in g.items -%}
+        {%- if s.core %}{% include skill.html s=s %}{% endif -%}
+        {%- endfor -%}
+        {%- endfor %}
+      </ul>
+    </div>
+    <div>
+      <h2>{% include t.html k="home_interests" %}</h2>
+      <ul class="chips chips--lg">
+        {%- for i in prof.interests %}
+        <li>{% include i18n.html en=i.en pt=i.pt %}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

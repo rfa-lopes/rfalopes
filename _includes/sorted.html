@@ -1,0 +1,18 @@
+{%- comment -%}
+  Sorts a collection into `sorted_items`.
+    experience / education → ongoing items first (no `end`) by `start`, then finished ones by `end` (most recently finished first)
+    hobbies                → by `order` (1, 2, 3 ...)
+  Usage: {% include sorted.html collection="experience" %}
+{%- endcomment -%}
+{%- assign _sc = site[include.collection] -%}
+{%- if include.collection == 'hobbies' -%}
+  {%- assign sorted_items = _sc | sort: 'order' -%}
+{%- else -%}
+  {%- assign _by_start = _sc | sort: 'start' | reverse -%}
+  {%- comment -%} (no `or` in where_exp on this Jekyll version → empty / missing `end` handled separately) {%- endcomment -%}
+  {%- assign _ongoing_a = _by_start | where_exp: 'i', 'i.end == nil' -%}
+  {%- assign _ongoing_b = _by_start | where: 'end', '' -%}
+  {%- assign _ongoing = _ongoing_a | concat: _ongoing_b | sort: 'start' | reverse -%}
+  {%- assign _finished = _by_start | where_exp: 'i', 'i.end != nil' | where_exp: 'i', "i.end != ''" | sort: 'end' | reverse -%}
+  {%- assign sorted_items = _ongoing | concat: _finished -%}
+{%- endif -%}

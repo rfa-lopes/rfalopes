@@ -1,0 +1,184 @@
+---
+layout: default
+---
+{%- comment -%}
+  Dedicated page for one experience / education / hobby item.
+  The item's text comes from its file in admin/_experience, admin/_education or admin/_hobbies.
+{%- endcomment -%}
+{%- assign _col = page.collection -%}
+{%- assign _back_key = 'back_' | append: _col -%}
+{%- if _col == 'hobbies' -%}{%- assign _since = true -%}{%- endif -%}
+{%- include sorted.html collection=_col -%}
+{%- comment -%} Items with `parent:` (e.g. university projects) live inside their parent's page, not in the timeline. {%- endcomment -%}
+{%- if page.parent -%}
+  {%- assign sorted_items = sorted_items | where: 'parent', page.parent -%}
+  {%- for _pd in site[_col] -%}{%- if _pd.slug == page.parent -%}{%- assign _parent_doc = _pd -%}{%- endif -%}{%- endfor -%}
+{%- else -%}
+  {%- assign sorted_items = sorted_items | where_exp: 'i', 'i.parent == nil' -%}
+{%- endif -%}
+{%- for _it in sorted_items -%}{%- if _it.url == page.url -%}{%- assign _idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign _prev_idx = _idx | minus: 1 -%}
+{%- assign _next_idx = _idx | plus: 1 -%}
+{%- assign _above = nil -%}
+{%- if _idx > 0 -%}{%- assign _above = sorted_items[_prev_idx] -%}{%- endif -%}
+{%- assign _below = sorted_items[_next_idx] -%}
+{%- comment -%}
+  Timelines list the most recent first, so "Previous" = the item below (older) and "Next" = the item above (more recent).
+  Hobbies are a plain list: "Previous" = the one before, "Next" = the one after.
+{%- endcomment -%}
+{%- if _col == 'hobbies' -%}
+  {%- assign _prev = _above -%}{%- assign _next = _below -%}
+{%- else -%}
+  {%- assign _prev = _below -%}{%- assign _next = _above -%}
+{%- endif -%}
+
+{%- assign _img_base = 'src="' | append: site.baseurl | append: '/images/' -%}
+{%- assign _href_base = 'href="' | append: site.baseurl | append: '/' -%}
+{%- assign _body = content | replace: 'src="/images/', _img_base | replace: 'href="/', _href_base -%}
+{%- assign _parts = _body | split: '<!--pt-->' -%}
+
+<article class="detail">
+  <header class="detail-hero">
+    <div class="container detail-hero-grid">
+      <div class="detail-head">
+        {%- if _parent_doc %}
+        <a class="back-link" href="{{ _parent_doc.url | relative_url }}">{% include icon.html name="arrow-left" %}{% include title.html item=_parent_doc %}</a>
+        {%- else %}
+        <a class="back-link" href="{{ '/' | append: _col | append: '/' | relative_url }}">{% include icon.html name="arrow-left" %}{% include t.html k=_back_key %}</a>
+        {%- endif %}
+        <div class="tags">{% include tags.html tags=page.tags %}</div>
+        <h1 class="detail-title">{% include title.html item=page %}</h1>
+        {%- if page.subtitle %}
+        <p class="detail-sub">{% include i18n.html en=page.subtitle pt=page.subtitle_pt %}</p>
+        {%- endif %}
+        <ul class="meta">
+          {%- capture _when %}{% include period.html start=page.start end=page.end since=_since custom=page.period custom_pt=page.period_pt %}{% endcapture %}
+          {%- assign _when = _when | strip %}
+          {%- if _when != '' %}
+          <li>{% include icon.html name="calendar" %}<span>{{ _when }}</span></li>
+          {%- endif %}
+          {%- if page.location and page.location != '' %}
+          <li>{% include icon.html name="map-pin" %}<span>{{ page.location }}</span></li>
+          {%- endif %}
+        </ul>
+        {%- if page.summary %}
+        <p class="detail-lead">{% include i18n.html en=page.summary pt=page.summary_pt %}</p>
+        {%- endif %}
+      </div>
+      {%- if page.cover %}
+      <figure class="detail-cover{% if page.cover_fit == 'contain' or page.cover_bg %} is-contain{% endif %}{% if page.cover_bg %} is-bleed{% endif %}"{% if page.cover_bg %} style="background: {{ page.cover_bg }} !important"{% endif %}>
+        <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
+      </figure>
+      {%- endif %}
+    </div>
+  </header>
+
+  <div class="container detail-grid">
+    <div class="detail-main">
+      {%- if page.highlights %}
+      <section class="panel">
+        <h2 class="panel-title">{% include t.html k="highlights" %}</h2>
+        <ul class="check-list">
+          {%- for h in page.highlights %}
+          <li>{% include icon.html name="check" %}<span>{% include i18n.html en=h.en pt=h.pt %}</span></li>
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endif %}
+
+      {%- assign _has_body = _body | strip | size -%}
+      {%- if _has_body > 0 %}
+      <section class="story">
+        {%- if _parts.size > 1 %}
+        <div class="prose" data-l="en">{{ _parts[0] }}</div>
+        <div class="prose" data-l="pt">{{ _parts[1] }}</div>
+        {%- else %}
+        <div class="prose">{{ _body }}</div>
+        {%- endif %}
+      </section>
+      {%- endif %}
+
+      {%- include sorted.html collection='education' %}
+      {%- assign _kids = sorted_items | where: 'parent', page.slug %}
+      {%- if _kids.size > 0 and _col == 'education' %}
+      <section class="panel">
+        <h2 class="panel-title">{% include t.html k="related_projects" %}</h2>
+        <div class="mini-grid">
+          {%- for rel in _kids %}
+          <a class="mini-card" href="{{ rel.url | relative_url }}">
+            {% include media.html item=rel class="mini-media" %}
+            <div class="mini-body">
+              <div class="tags">{% include tags.html tags=rel.tags %}</div>
+              <h3>{% include title.html item=rel %}</h3>
+              <p>{% include period.html start=rel.start end=rel.end %}</p>
+            </div>
+          </a>
+          {%- endfor %}
+        </div>
+      </section>
+      {%- endif %}
+
+      {%- if page.videos %}
+      <section class="panel">
+        <h2 class="panel-title">{% include t.html k="videos" %}</h2>
+        <div class="video-grid">
+          {%- for v in page.videos %}
+          <figure class="video-item">
+            <video controls preload="metadata" playsinline{% if v.poster %} poster="{{ v.poster | relative_url }}"{% endif %}>
+              <source src="{{ v.src | relative_url }}" type="video/mp4">
+            </video>
+            {%- if v.caption %}<figcaption>{% include i18n.html en=v.caption pt=v.caption_pt %}</figcaption>{% endif %}
+          </figure>
+          {%- endfor %}
+        </div>
+      </section>
+      {%- endif %}
+
+      {%- if page.gallery %}
+      <section class="panel">
+        <h2 class="panel-title">{% include t.html k="gallery" %}</h2>
+        <div class="gallery">
+          {%- for g in page.gallery %}
+          <figure class="gallery-item">
+            <a href="{{ g.src | relative_url }}" data-lightbox data-caption-en="{{ g.caption | escape }}" data-caption-pt="{{ g.caption_pt | default: g.caption | escape }}">
+              <img src="{{ g.src | relative_url }}" alt="{{ g.caption | escape }}" loading="lazy" decoding="async">
+            </a>
+            {%- if g.caption %}<figcaption>{% include i18n.html en=g.caption pt=g.caption_pt %}</figcaption>{% endif %}
+          </figure>
+          {%- endfor %}
+        </div>
+      </section>
+      {%- endif %}
+    </div>
+
+    {%- if page.tech or page.links %}
+    <aside class="detail-side">
+      {%- if page.tech %}
+      <section class="panel">
+        <h2 class="panel-title">{% if page.tech_label %}{% include i18n.html en=page.tech_label pt=page.tech_label_pt %}{% else %}{% include t.html k="tech_stack" %}{% endif %}</h2>
+        <ul class="chips">{% for tech in page.tech %}<li>{{ tech }}</li>{% endfor %}</ul>
+      </section>
+      {%- endif %}
+      {%- if page.links %}
+      <section class="panel">
+        <h2 class="panel-title">{% include t.html k="links" %}</h2>
+        <ul class="link-list">
+          {%- for l in page.links %}
+          <li><a href="{{ l.url }}" target="_blank" rel="noopener">{% include icon.html name="external" %}<span>{% include i18n.html en=l.label pt=l.label_pt %}</span></a></li>
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endif %}
+    </aside>
+    {%- endif %}
+  </div>
+
+  <nav class="container pager" aria-label="Pagination">
+    {%- if _prev %}
+    <a class="pager-link" href="{{ _prev.url | relative_url }}"><small>{% include icon.html name="arrow-left" %}{% include t.html k="previous" %}</small><span>{% include title.html item=_prev %}</span></a>
+    {%- else %}<span></span>{% endif %}
+    {%- if _next %}
+    <a class="pager-link is-next" href="{{ _next.url | relative_url }}"><small>{% include t.html k="next" %}{% include icon.html name="arrow-right" %}</small><span>{% include title.html item=_next %}</span></a>
+    {%- endif %}
+  </nav>
+</article>
