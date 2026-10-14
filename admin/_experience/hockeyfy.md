@@ -1,10 +1,10 @@
 ---
 title: Hockeyfy
-subtitle: Founder
-subtitle_pt: Founder
+subtitle: Founder · 3D e-commerce platform
+subtitle_pt: Founder · Plataforma de e-commerce 3D
 track: own                 # employee = job in IT for a company | own = own project / business
 tags: [business]              # job | internship | business | personal | freelance  (see admin/_data/tags.yml)
-start: "2023"                 # "YYYY" or "YYYY-MM" — always in quotes
+start: "2023-10"               # "YYYY" or "YYYY-MM" — always in quotes
 end: ""                       # leave empty while it is still ongoing → shows "Present"
 location: ""
 cover: /images/experience/hockeyfy/logo.png

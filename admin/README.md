@@ -51,7 +51,7 @@ Para **apagar** um item, apaga o ficheiro `.md`.
 | `initials` | Texto/emoji mostrado quando **não** há `cover` |
 | `summary` / `summary_pt` | Descrição curta (aparece no card) |
 | `highlights` | Lista de pontos principais (com `en` e `pt`) |
-| `tech` | Lista de chips (tecnologias, ou áreas de trabalho em itens não-tech) |
+| `tech` | Lista de chips (tecnologias, ou áreas de trabalho em itens não-tech). No formato normal os chips são iguais nas duas línguas (`[React, TypeScript]`); para teres **tradução**, usa chaves: `- { en: Sales, pt: Vendas }` |
 | `tech_label` / `tech_label_pt` | Título do painel dos chips (por defeito "Tecnologias"; ex. `Areas` / `Áreas`) |
 | `links` | Botões para site, GitHub, etc. |
 | `videos` | Vídeos `.mp4` (com `src`, `poster`, `caption`) — ver abaixo |

@@ -22,7 +22,15 @@ highlights:
     pt: "Geri encomendas e fornecedores."
 tech_label: Areas
 tech_label_pt: Áreas
-tech: [Wood construction, Electrics, Plumbing, Terrace, Bar, Payments, Kitchen, Orders & suppliers]
+tech:
+  - { en: Wood construction, pt: Construção em madeira }
+  - { en: Electrics, pt: Eletricidade }
+  - { en: Plumbing, pt: Canalização }
+  - { en: Terrace, pt: Esplanada }
+  - { en: Bar, pt: Bar }
+  - { en: Payments, pt: Pagamentos }
+  - { en: Kitchen, pt: Cozinha }
+  - { en: Orders & suppliers, pt: Encomendas e fornecedores }
 ---
 For two summers I helped build and run a **family-run beach bar**, and I ended up involved in every part of it.
 

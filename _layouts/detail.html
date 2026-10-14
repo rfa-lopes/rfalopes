@@ -156,7 +156,7 @@ layout: default
       {%- if page.tech %}
       <section class="panel">
         <h2 class="panel-title">{% if page.tech_label %}{% include i18n.html en=page.tech_label pt=page.tech_label_pt %}{% else %}{% include t.html k="tech_stack" %}{% endif %}</h2>
-        <ul class="chips">{% for tech in page.tech %}<li>{{ tech }}</li>{% endfor %}</ul>
+        <ul class="chips">{% for tech in page.tech %}<li>{% if tech.en %}{% include i18n.html en=tech.en pt=tech.pt %}{% else %}{{ tech }}{% endif %}</li>{% endfor %}</ul>
       </section>
       {%- endif %}
       {%- if page.links %}

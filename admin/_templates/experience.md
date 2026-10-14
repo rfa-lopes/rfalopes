@@ -16,7 +16,9 @@ summary_pt: Uma ou duas frases que aparecem no card.
 highlights:
   - en: "Something you achieved."
     pt: "Algo que alcançaste."
-tech: [Tech 1, Tech 2]
+tech: [Tech 1, Tech 2]        # nomes iguais nas duas línguas; se precisares de PT usa chaves:
+# tech:
+#   - { en: Sales, pt: Vendas }
 # tech_label: Areas         # título do painel dos chips (por defeito "Tech stack")
 # tech_label_pt: Áreas
 links:

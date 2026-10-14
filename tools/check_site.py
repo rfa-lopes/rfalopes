@@ -3,7 +3,7 @@
 
   python tools/check_site.py [built_site_dir] [baseurl]
 
-Defaults: built_site_dir = _site, baseurl = /rfalopes (same as _config.yml).
+Defaults: built_site_dir = _site, baseurl = "" (same as _config.yml, site at the root).
 It looks for Liquid errors left in the HTML and for broken internal links, images,
 videos and posters. Exit code 0 = all good, 1 = problems found.
 """
@@ -13,7 +13,7 @@ import re
 import sys
 
 root = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else "_site")
-baseurl = (sys.argv[2] if len(sys.argv) > 2 else "/rfalopes").rstrip("/")
+baseurl = (sys.argv[2] if len(sys.argv) > 2 else "").rstrip("/")
 
 if not os.path.isdir(root):
     sys.exit(f"Folder not found: {root}  (build the site first: bundle exec jekyll build)")

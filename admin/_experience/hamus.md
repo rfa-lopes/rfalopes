@@ -22,7 +22,15 @@ highlights:
     pt: "Fornecedores, contabilidade e a gestão do dia a dia do negócio."
 tech_label: Areas
 tech_label_pt: Áreas
-tech: [Machinery, Plumbing, Chemical process, Marketing, Sales, Customer management, Suppliers, Accounting]
+tech:
+  - { en: Machinery, pt: Máquinas }
+  - { en: Plumbing, pt: Canalização }
+  - { en: Chemical process, pt: Processo químico }
+  - { en: Marketing, pt: Marketing }
+  - { en: Sales, pt: Vendas }
+  - { en: Customer management, pt: Gestão de clientes }
+  - { en: Suppliers, pt: Fornecedores }
+  - { en: Accounting, pt: Contabilidade }
 videos:
   - src: /images/experience/hamus/machine.mp4
     poster: /images/experience/hamus/machine-poster.jpg

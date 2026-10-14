@@ -30,17 +30,12 @@ links:
   - label: Corkified on the App Store
     label_pt: Corkified na App Store
     url: https://apps.apple.com/app/corkified/id6738606770
-  - label: Pairing Portugal (campaign with VisitPortugal)
-    label_pt: Pairing Portugal (campanha com a VisitPortugal)
-    url: https://www.adsoftheworld.com/campaigns/pairing-portugal
 ---
 Since June 2026 I have been a **backend developer at [Corkified](https://corkified.com)**, where I have worked on a bit of everything.
 
 ## The company
 
 **Corkified** is a Portuguese wine-tech startup that turns the cork of a wine bottle into a digital touchpoint. An **NFC tag** sits inside the cork: tap it with a phone and the Corkified app opens with that bottle's information and the winemaker's story — and it confirms the bottle is authentic, which helps fight counterfeits. The app also lets wine lovers keep a personal collection and private tasting notes. The company's motto is, roughly, *"Tap the cork. Hear its story."*
-
-Together with VisitPortugal, Corkified launched **Pairing Portugal**: 100 Portuguese wines paired with 100 poems and 100 places, so that a tap on the cork turns a bottle into a gateway for discovering where the wine comes from — and even booking a trip.
 
 ## What I do there
 
@@ -50,7 +45,7 @@ Together with VisitPortugal, Corkified launched **Pairing Portugal**: 100 Portug
 
 {% comment %}
   TODO — improve this text: the stack you use (languages, frameworks, cloud), more of what you have built, the impact.
-  The company description above comes from public sources (corkified.com, the App Store page and the Pairing Portugal campaign page).
+  The company description above comes from public sources (corkified.com and the App Store page).
 {% endcomment %}
 
 <!--pt-->
@@ -60,8 +55,6 @@ Desde junho de 2026 sou **backend developer na [Corkified](https://corkified.com
 ## A empresa
 
 A **Corkified** é uma startup portuguesa de wine-tech que transforma a rolha da garrafa de vinho num ponto de contacto digital. Dentro da rolha há uma **etiqueta NFC**: ao encostar o telemóvel, a app da Corkified abre com a informação daquela garrafa e a história de quem fez o vinho — e confirma que a garrafa é autêntica, o que ajuda a combater a contrafação. A app permite ainda aos apreciadores manter uma coleção pessoal e notas de prova privadas. O lema da empresa é, em tradução livre, *"Toca na rolha. Ouve a sua história."*
-
-Em conjunto com a VisitPortugal, a Corkified lançou o **Pairing Portugal**: 100 vinhos portugueses associados a 100 poemas e 100 lugares, para que um toque na rolha transforme a garrafa numa porta de entrada para descobrir a origem do vinho — e até reservar uma viagem.
 
 ## O que faço lá
 

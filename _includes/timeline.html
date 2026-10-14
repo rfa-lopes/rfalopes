@@ -25,7 +25,7 @@
           {%- endif %}
           <p class="tl-text">{% include i18n.html en=item.summary pt=item.summary_pt %}</p>
           {%- if item.tech %}
-          <ul class="chips">{% for tech in item.tech limit: 6 %}<li>{{ tech }}</li>{% endfor %}{% if item.tech.size > 6 %}<li class="chip-more">+{{ item.tech.size | minus: 6 }}</li>{% endif %}</ul>
+          <ul class="chips">{% for tech in item.tech limit: 6 %}<li>{% if tech.en %}{% include i18n.html en=tech.en pt=tech.pt %}{% else %}{{ tech }}{% endif %}</li>{% endfor %}{% if item.tech.size > 6 %}<li class="chip-more">+{{ item.tech.size | minus: 6 }}</li>{% endif %}</ul>
           {%- endif %}
           <span class="tl-more">{% include t.html k="view_details" %} {% include icon.html name="arrow-right" %}</span>
         </div></div>

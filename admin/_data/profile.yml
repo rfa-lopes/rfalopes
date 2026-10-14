@@ -45,10 +45,10 @@ highlights:
     label:
       en: Master's thesis grade (SNIFFER)
       pt: nota da tese de mestrado (SNIFFER)
-  - value: "6"
+  - value: "5"
     label:
-      en: companies & organisations — Corkified, Hockeyfy, Hamus, Siemens, Card4B, Sesimbra City Council
-      pt: empresas e organizações — Corkified, Hockeyfy, Hamus, Siemens, Card4B, Câmara de Sesimbra
+      en: companies & organisations — Corkified, Hockeyfy, Hamus, Siemens, Card4B
+      pt: empresas e organizações — Corkified, Hockeyfy, Hamus, Siemens, Card4B
 
 # Personal interests (home page)
 interests:

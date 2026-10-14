@@ -9,9 +9,10 @@
 
 - group: { en: AI, pt: IA }
   items:
-    - { name: Claude Code, img: /images/icons/claude-code.svg }
+    - { name: Claude Code, img: /images/icons/claude-code.svg, core: true }
     - { name: OpenCode, img: /images/icons/opencode.svg }
     - { name: Gemini File Search, img: /images/icons/gemini.svg }
+    - { name: Lovable, img: /images/icons/lovable.svg }
 
 - group: { en: Programming languages, pt: Linguagens de programação }
   items:
@@ -86,6 +87,6 @@
 
 - group: { en: Operating systems, pt: Sistemas operativos }
   items:
-    - { name: Linux, icon: linux, core: true }
+    - { name: Linux, icon: linux }
     - { name: Windows, icon: windows8 }
     - { name: macOS, icon: apple, core: true }
