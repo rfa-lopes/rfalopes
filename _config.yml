@@ -3,7 +3,7 @@
 # ─────────────────────────────────────────────────────────────
 title: Rodrigo Lopes
 description: Software Engineer and founder of Hockeyfy. Experience, education, skills and projects.
-baseurl: "/rfalopes"                   # the subpath of the site
+baseurl: ""                            # site served at the domain root
 url: "https://rfa-lopes.github.io"     # the base hostname & protocol
 lang: en
 timezone: Europe/Lisbon

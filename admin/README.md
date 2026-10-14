@@ -83,7 +83,7 @@ Se não puseres `<!--pt-->`, o mesmo texto aparece nas duas línguas. O mesmo va
 ![Descrição da foto](/images/experience/hockeyfy/foto-1.jpg)
 ```
 
-- O caminho começa sempre por `/images/` (não escrevas `/rfalopes`).
+- O caminho começa sempre por `/images/`.
 - Várias imagens seguidas (sem linha em branco entre elas) formam uma grelha.
 - As fotos ampliam ao clicar. O texto entre `[ ]` é a legenda.
 - Links para outras páginas do site: `[Siemens](/experience/siemens/)`.
@@ -170,11 +170,11 @@ bundle install                 # só da primeira vez (ou quando o Gemfile mudar)
 bundle exec jekyll serve       # deixa este terminal aberto
 ```
 
-Abre **http://127.0.0.1:4000/rfalopes/** (o `/rfalopes/` no fim é obrigatório). Guarda um ficheiro, espera ~2 segundos e atualiza a página (Ctrl+F5 se não mudar). Para parar: `Ctrl+C`.
+Abre **http://127.0.0.1:4000/**. Guarda um ficheiro, espera ~2 segundos e atualiza a página (Ctrl+F5 se não mudar). Para parar: `Ctrl+C`.
 
 - Alterações a `_config.yml` só se veem depois de parar e voltar a arrancar o servidor.
 - Porta ocupada? `bundle exec jekyll serve --port 4001`.
-- Ver no telemóvel (mesma rede Wi-Fi): `bundle exec jekyll serve --host 0.0.0.0` e abre `http://<IP-do-PC>:4000/rfalopes/`.
+- Ver no telemóvel (mesma rede Wi-Fi): `bundle exec jekyll serve --host 0.0.0.0` e abre `http://<IP-do-PC>:4000/`.
 - Para ver o outro idioma ou tema, usa os botões **EN/PT** e **claro/escuro** do próprio site (a escolha fica guardada no browser).
 
 ### Testar como o GitHub Pages vai construir
@@ -192,7 +192,7 @@ O primeiro comando falha se algum ficheiro `.md`/`.yml` tiver um erro (aspas em 
 
 ## Publicar (deploy)
 
-O site é publicado pelo **GitHub Pages** a partir do branch **`master`** (pasta `/`). Não há mais nada a configurar: um push para a `master` reconstrói e publica o site em 1–3 minutos em https://rfa-lopes.github.io/rfalopes/.
+O site é publicado pelo **GitHub Pages** a partir do branch **`master`** (pasta `/`). Não há mais nada a configurar: um push para a `master` reconstrói e publica o site em 1–3 minutos em https://rfa-lopes.github.io/.
 
 Fluxo recomendado (a `master` é o site público, por isso passa sempre por um branch):
 
@@ -206,7 +206,7 @@ git push -u origin minha-alteracao
 Depois, no GitHub: **Pull request → Merge** para a `master`. Para publicar já, sem pull request: `git switch master`, `git merge minha-alteracao`, `git push`.
 
 - **Ver o progresso:** repositório no GitHub → separador **Actions** → *pages-build-deployment*. Fica verde quando o site está no ar.
-- **Ver o resultado:** abre https://rfa-lopes.github.io/rfalopes/ e faz Ctrl+F5 (o browser guarda cópias).
+- **Ver o resultado:** abre https://rfa-lopes.github.io/ e faz Ctrl+F5 (o browser guarda cópias).
 - **Desfazer um deploy mau:** `git revert <commit-do-merge>` e `git push` — o site volta ao estado anterior.
 - Um push para um branch que **não** seja a `master` não publica nada.
 
@@ -218,7 +218,7 @@ Depois, no GitHub: **Pull request → Merge** para a `master`. Para publicar já
 |---|---|
 | `cannot load such file -- webrick` | Falta instalar as dependências: `bundle install` |
 | `ruby` / `bundle` não é reconhecido | Abre um terminal novo, ou `export PATH="/c/Ruby33-x64/bin:$PATH"` no Git Bash |
-| Página em branco / 404 em `localhost:4000` | O endereço tem de acabar em `/rfalopes/` |
+| Página em branco / 404 em `localhost:4000` | Reinicia o `bundle exec jekyll serve` (alterações ao `_config.yml` só têm efeito depois de reiniciar) |
 | Uma imagem não aparece | O caminho começa por `/images/…`; **maiúsculas contam** no GitHub (`Foto.JPG` ≠ `foto.jpg`); corre `python tools/check_site.py _site-test` |
 | `YAML Exception` / `mapping values are not allowed` | Texto com `:` ou `#` no topo do ficheiro tem de ir entre aspas: `summary: "Algo: assim"` |
 | A timeline dá erro de ordenação ou mostra itens fora de ordem | `start` e `end` têm de estar **entre aspas** (`"2023"`), todos como texto |

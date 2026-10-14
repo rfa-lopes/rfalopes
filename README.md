@@ -1,4 +1,4 @@
-# Rodrigo Faria Lopes — *[rfa-lopes.github.io/rfalopes](https://rfa-lopes.github.io/rfalopes/)*
+# Rodrigo Faria Lopes — *[rfa-lopes.github.io](https://rfa-lopes.github.io/)*
 
 Personal portfolio / CV site built with [Jekyll](https://jekyllrb.com) and published on GitHub Pages.
 Plain CSS and vanilla JS — there is no build step besides Jekyll itself.
@@ -25,7 +25,7 @@ You need Ruby 3.x. On Windows: `winget install RubyInstallerTeam.RubyWithDevKit.
 
 ```bash
 bundle install                 # once — installs into vendor/bundle
-bundle exec jekyll serve       # → http://127.0.0.1:4000/rfalopes/
+bundle exec jekyll serve       # → http://127.0.0.1:4000/
 ```
 
 Save a file and reload the page (≈2 s). Restart the server after editing `_config.yml`.

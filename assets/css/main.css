@@ -582,6 +582,8 @@ html:not(.js) .track-bar { display: none; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: 1.6rem; }
 .footer-inner p { margin: 0; color: var(--muted); font-size: .88rem; }
 .site-footer .social a { width: 38px; height: 38px; }
+.footer-badge { display: inline-flex; align-items: center; }
+.footer-badge img { display: block; }
 
 /* 15 · LIGHTBOX ------------------------------------------------------------ */
 .lightbox {
